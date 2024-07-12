@@ -1,0 +1,58 @@
+﻿@model NmhCNT1K22Lesson12.Models.NguyenMinhHiep_SACH
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NguyenMinhHiep_SACH</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NguyenMinhHiep_TenSach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguyenMinhHiep_TenSach)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NguyenMinhHiep_SoTrang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguyenMinhHiep_SoTrang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NguyenMinhHiep_NamXB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguyenMinhHiep_NamXB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NguyenMinhHiep_TrangThai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguyenMinhHiep_TrangThai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NguyenMinhHiep_TACGIA.NguyenMinhHiep_TenTacGia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguyenMinhHiep_TACGIA.NguyenMinhHiep_TenTacGia)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NguyenMinhHiep_MaSach }) |
+    @Html.ActionLink("NmhBack to List", "NmhIndex")
+</p>

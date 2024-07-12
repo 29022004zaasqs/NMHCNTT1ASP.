@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NguyenMinhHiep_20123212Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="NguyenMinhHiep_SACH">
+          <Key>
+            <PropertyRef Name="NguyenMinhHiep_MaSach" />
+          </Key>
+          <Property Name="NguyenMinhHiep_MaSach" Type="int" Nullable="false" />
+          <Property Name="NguyenMinhHiep_TenSach" Type="nvarchar" MaxLength="255" />
+          <Property Name="NguyenMinhHiep_SoTrang" Type="int" />
+          <Property Name="NguyenMinhHiep_NamXB" Type="int" />
+          <Property Name="NguyenMinhHiep_MaTG" Type="int" />
+          <Property Name="NguyenMinhHiep_TrangThai" Type="bit" />
+        </EntityType>
+        <EntityType Name="NguyenMinhHiep_TACGIA">
+          <Key>
+            <PropertyRef Name="NguyenMinhHiep_MaTG" />
+          </Key>
+          <Property Name="NguyenMinhHiep_MaTG" Type="int" Nullable="false" />
+          <Property Name="NguyenMinhHiep_TenTacGia" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK__NguyenMin__Nguye__1273C1CD">
+          <End Role="NguyenMinhHiep_TACGIA" Type="Self.NguyenMinhHiep_TACGIA" Multiplicity="0..1" />
+          <End Role="NguyenMinhHiep_SACH" Type="Self.NguyenMinhHiep_SACH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguyenMinhHiep_TACGIA">
+              <PropertyRef Name="NguyenMinhHiep_MaTG" />
+            </Principal>
+            <Dependent Role="NguyenMinhHiep_SACH">
+              <PropertyRef Name="NguyenMinhHiep_MaTG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NguyenMinhHiep_20123212ModelStoreContainer">
+          <EntitySet Name="NguyenMinhHiep_SACH" EntityType="Self.NguyenMinhHiep_SACH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NguyenMinhHiep_TACGIA" EntityType="Self.NguyenMinhHiep_TACGIA" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__NguyenMin__Nguye__1273C1CD" Association="Self.FK__NguyenMin__Nguye__1273C1CD">
+            <End Role="NguyenMinhHiep_TACGIA" EntitySet="NguyenMinhHiep_TACGIA" />
+            <End Role="NguyenMinhHiep_SACH" EntitySet="NguyenMinhHiep_SACH" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NguyenMinhHiep_20123212Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="NguyenMinhHiep_SACH">
+          <Key>
+            <PropertyRef Name="NguyenMinhHiep_MaSach" />
+          </Key>
+          <Property Name="NguyenMinhHiep_MaSach" Type="Int32" Nullable="false" />
+          <Property Name="NguyenMinhHiep_TenSach" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NguyenMinhHiep_SoTrang" Type="Int32" />
+          <Property Name="NguyenMinhHiep_NamXB" Type="Int32" />
+          <Property Name="NguyenMinhHiep_MaTG" Type="Int32" />
+          <Property Name="NguyenMinhHiep_TrangThai" Type="Boolean" />
+          <NavigationProperty Name="NguyenMinhHiep_TACGIA" Relationship="Self.FK__NguyenMin__Nguye__1273C1CD" FromRole="NguyenMinhHiep_SACH" ToRole="NguyenMinhHiep_TACGIA" />
+        </EntityType>
+        <EntityType Name="NguyenMinhHiep_TACGIA">
+          <Key>
+            <PropertyRef Name="NguyenMinhHiep_MaTG" />
+          </Key>
+          <Property Name="NguyenMinhHiep_MaTG" Type="Int32" Nullable="false" />
+          <Property Name="NguyenMinhHiep_TenTacGia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NguyenMinhHiep_SACH" Relationship="Self.FK__NguyenMin__Nguye__1273C1CD" FromRole="NguyenMinhHiep_TACGIA" ToRole="NguyenMinhHiep_SACH" />
+        </EntityType>
+        <Association Name="FK__NguyenMin__Nguye__1273C1CD">
+          <End Role="NguyenMinhHiep_TACGIA" Type="Self.NguyenMinhHiep_TACGIA" Multiplicity="0..1" />
+          <End Role="NguyenMinhHiep_SACH" Type="Self.NguyenMinhHiep_SACH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguyenMinhHiep_TACGIA">
+              <PropertyRef Name="NguyenMinhHiep_MaTG" />
+            </Principal>
+            <Dependent Role="NguyenMinhHiep_SACH">
+              <PropertyRef Name="NguyenMinhHiep_MaTG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NguyenMinhHiep_20123212Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="NguyenMinhHiep_SACH" EntityType="Self.NguyenMinhHiep_SACH" />
+          <EntitySet Name="NguyenMinhHiep_TACGIA" EntityType="Self.NguyenMinhHiep_TACGIA" />
+          <AssociationSet Name="FK__NguyenMin__Nguye__1273C1CD" Association="Self.FK__NguyenMin__Nguye__1273C1CD">
+            <End Role="NguyenMinhHiep_TACGIA" EntitySet="NguyenMinhHiep_TACGIA" />
+            <End Role="NguyenMinhHiep_SACH" EntitySet="NguyenMinhHiep_SACH" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NguyenMinhHiep_20123212ModelStoreContainer" CdmEntityContainer="NguyenMinhHiep_20123212Entities">
+          <EntitySetMapping Name="NguyenMinhHiep_SACH">
+            <EntityTypeMapping TypeName="NguyenMinhHiep_20123212Model.NguyenMinhHiep_SACH">
+              <MappingFragment StoreEntitySet="NguyenMinhHiep_SACH">
+                <ScalarProperty Name="NguyenMinhHiep_MaSach" ColumnName="NguyenMinhHiep_MaSach" />
+                <ScalarProperty Name="NguyenMinhHiep_TenSach" ColumnName="NguyenMinhHiep_TenSach" />
+                <ScalarProperty Name="NguyenMinhHiep_SoTrang" ColumnName="NguyenMinhHiep_SoTrang" />
+                <ScalarProperty Name="NguyenMinhHiep_NamXB" ColumnName="NguyenMinhHiep_NamXB" />
+                <ScalarProperty Name="NguyenMinhHiep_MaTG" ColumnName="NguyenMinhHiep_MaTG" />
+                <ScalarProperty Name="NguyenMinhHiep_TrangThai" ColumnName="NguyenMinhHiep_TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NguyenMinhHiep_TACGIA">
+            <EntityTypeMapping TypeName="NguyenMinhHiep_20123212Model.NguyenMinhHiep_TACGIA">
+              <MappingFragment StoreEntitySet="NguyenMinhHiep_TACGIA">
+                <ScalarProperty Name="NguyenMinhHiep_MaTG" ColumnName="NguyenMinhHiep_MaTG" />
+                <ScalarProperty Name="NguyenMinhHiep_TenTacGia" ColumnName="NguyenMinhHiep_TenTacGia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

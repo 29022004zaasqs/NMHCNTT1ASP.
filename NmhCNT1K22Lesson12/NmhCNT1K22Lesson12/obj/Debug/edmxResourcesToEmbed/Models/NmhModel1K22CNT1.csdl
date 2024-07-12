@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NguyenMinhHiep_20123212Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="NguyenMinhHiep_SACH">
+    <Key>
+      <PropertyRef Name="NguyenMinhHiep_MaSach" />
+    </Key>
+    <Property Name="NguyenMinhHiep_MaSach" Type="Int32" Nullable="false" />
+    <Property Name="NguyenMinhHiep_TenSach" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NguyenMinhHiep_SoTrang" Type="Int32" />
+    <Property Name="NguyenMinhHiep_NamXB" Type="Int32" />
+    <Property Name="NguyenMinhHiep_MaTG" Type="Int32" />
+    <Property Name="NguyenMinhHiep_TrangThai" Type="Boolean" />
+    <NavigationProperty Name="NguyenMinhHiep_TACGIA" Relationship="Self.FK__NguyenMin__Nguye__1273C1CD" FromRole="NguyenMinhHiep_SACH" ToRole="NguyenMinhHiep_TACGIA" />
+  </EntityType>
+  <EntityType Name="NguyenMinhHiep_TACGIA">
+    <Key>
+      <PropertyRef Name="NguyenMinhHiep_MaTG" />
+    </Key>
+    <Property Name="NguyenMinhHiep_MaTG" Type="Int32" Nullable="false" />
+    <Property Name="NguyenMinhHiep_TenTacGia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NguyenMinhHiep_SACH" Relationship="Self.FK__NguyenMin__Nguye__1273C1CD" FromRole="NguyenMinhHiep_TACGIA" ToRole="NguyenMinhHiep_SACH" />
+  </EntityType>
+  <Association Name="FK__NguyenMin__Nguye__1273C1CD">
+    <End Role="NguyenMinhHiep_TACGIA" Type="Self.NguyenMinhHiep_TACGIA" Multiplicity="0..1" />
+    <End Role="NguyenMinhHiep_SACH" Type="Self.NguyenMinhHiep_SACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NguyenMinhHiep_TACGIA">
+        <PropertyRef Name="NguyenMinhHiep_MaTG" />
+      </Principal>
+      <Dependent Role="NguyenMinhHiep_SACH">
+        <PropertyRef Name="NguyenMinhHiep_MaTG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NguyenMinhHiep_20123212Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="NguyenMinhHiep_SACH" EntityType="Self.NguyenMinhHiep_SACH" />
+    <EntitySet Name="NguyenMinhHiep_TACGIA" EntityType="Self.NguyenMinhHiep_TACGIA" />
+    <AssociationSet Name="FK__NguyenMin__Nguye__1273C1CD" Association="Self.FK__NguyenMin__Nguye__1273C1CD">
+      <End Role="NguyenMinhHiep_TACGIA" EntitySet="NguyenMinhHiep_TACGIA" />
+      <End Role="NguyenMinhHiep_SACH" EntitySet="NguyenMinhHiep_SACH" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,26 @@
+﻿@model NmhCNT1K22Lesson12.Models.NguyenMinhHiep_TACGIA
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NguyenMinhHiep_TACGIA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NguyenMinhHiep_TenTacGia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguyenMinhHiep_TenTacGia)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NguyenMinhHiep_MaTG }) |
+    @Html.ActionLink("NmhBack to List", "NmhIndex")
+</p>

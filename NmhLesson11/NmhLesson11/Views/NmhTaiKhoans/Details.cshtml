@@ -1,0 +1,66 @@
+﻿@model NmhLesson11.Models.NmhTaiKhoan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NmhTaiKhoan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NmhUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmhUserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NmhPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmhPassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NmhAge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmhAge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NmhEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmhEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NmhPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmhPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NmhStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmhStatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NmhId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

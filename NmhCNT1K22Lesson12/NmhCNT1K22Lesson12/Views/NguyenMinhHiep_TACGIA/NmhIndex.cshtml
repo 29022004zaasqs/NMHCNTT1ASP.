@@ -1,0 +1,33 @@
+﻿@model IEnumerable<NmhCNT1K22Lesson12.Models.NguyenMinhHiep_TACGIA>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nmh:Thêm mới", "NmhCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NguyenMinhHiep_TenTacGia)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NguyenMinhHiep_TenTacGia)
+        </td>
+        <td>
+            @Html.ActionLink("Nmh:Edit", "NmhEdit", new { id=item.NguyenMinhHiep_MaTG.ToString() }) |
+            @Html.ActionLink("Nmh:Details", "NmhDetails", new { id=item.NguyenMinhHiep_MaTG.ToString() }) |
+            @Html.ActionLink("Nmh:Delete", "NmhDelete", new { id=item.NguyenMinhHiep_MaTG.ToString() })
+        </td>
+    </tr>
+}
+
+</table>

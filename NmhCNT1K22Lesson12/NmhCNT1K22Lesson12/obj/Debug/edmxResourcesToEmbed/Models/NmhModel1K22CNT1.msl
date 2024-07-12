@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NguyenMinhHiep_20123212ModelStoreContainer" CdmEntityContainer="NguyenMinhHiep_20123212Entities">
+    <EntitySetMapping Name="NguyenMinhHiep_SACH">
+      <EntityTypeMapping TypeName="NguyenMinhHiep_20123212Model.NguyenMinhHiep_SACH">
+        <MappingFragment StoreEntitySet="NguyenMinhHiep_SACH">
+          <ScalarProperty Name="NguyenMinhHiep_MaSach" ColumnName="NguyenMinhHiep_MaSach" />
+          <ScalarProperty Name="NguyenMinhHiep_TenSach" ColumnName="NguyenMinhHiep_TenSach" />
+          <ScalarProperty Name="NguyenMinhHiep_SoTrang" ColumnName="NguyenMinhHiep_SoTrang" />
+          <ScalarProperty Name="NguyenMinhHiep_NamXB" ColumnName="NguyenMinhHiep_NamXB" />
+          <ScalarProperty Name="NguyenMinhHiep_MaTG" ColumnName="NguyenMinhHiep_MaTG" />
+          <ScalarProperty Name="NguyenMinhHiep_TrangThai" ColumnName="NguyenMinhHiep_TrangThai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NguyenMinhHiep_TACGIA">
+      <EntityTypeMapping TypeName="NguyenMinhHiep_20123212Model.NguyenMinhHiep_TACGIA">
+        <MappingFragment StoreEntitySet="NguyenMinhHiep_TACGIA">
+          <ScalarProperty Name="NguyenMinhHiep_MaTG" ColumnName="NguyenMinhHiep_MaTG" />
+          <ScalarProperty Name="NguyenMinhHiep_TenTacGia" ColumnName="NguyenMinhHiep_TenTacGia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
